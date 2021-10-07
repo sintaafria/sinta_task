@@ -11,8 +11,7 @@ let player = [
 while (main) {
 	if (ronde-rondeKe > 0) {
 		alertRonde(rondeKe);
-		jawaban = Math.floor(Math.random()*3)+1
-		alert(jawaban);
+		jawaban = Math.floor(Math.random()*3)+1;
 		tebakanPlayer1 = prompt('Masukkan tabakan Player 1');
 		validasi(tebakanPlayer1, 1);
 		tebakanPlayer2 = prompt('Masukkan tabakan Player 2');
