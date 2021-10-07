@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<h1>Hallo Selamat Datang</h1>
+	<p>Silahkan cek nilai kamu dengan menekan tombol dibawah</p>
+	<button onclick="cek()">cek</button>
+
+	<script>
+		function cek() {
+			let nilai = prompt('masukkan nilai kamu')
+			if (nilai <= 100  && nilai >= 85)	{
+				alert('Nilai anda A')
+			}else if (nilai < 85 && nilai >= 75) {
+				alert('Nilai anda B')
+			}else if (nilai < 75 && nilai >= 60) {
+				alert('Nilai anda C')
+			}else if (nilai < 60 && nilai >=50) {
+				alert('Nilai anda D')
+			}else if (nilai < 50) {
+				alert('Nilai anda E')
+			}else {
+				alert('Nilai tidak masuk dalam kategori')
+			}
+		}
+
+	</script>
+</body>
+</html>
