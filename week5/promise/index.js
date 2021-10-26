@@ -1,14 +1,19 @@
+const element = document.getElementById("list-item");
 const search = document.getElementById('search');
+const loading = document.getElementById('loading');
 let keyword = '';
 
 const fetchNews = key => {
     fetch(`https://newsapi.org/v2/top-headlines?country=id&q=${key}&apiKey=97eded16c9be454d967dcce41964dcb8`)
     .then(res => res.json())
-    .then(res => render(res));
+    .then(res => render(res))
+    .finally(() => {
+        loading.style.visibility="hidden";
+        element.style.visibility="visible";
+    })
 }
 
 function render(data) {
-    const element = document.getElementById("list-item");
     const articles = data.articles;
     let item = "";
     articles.forEach(i => {
@@ -34,4 +39,6 @@ fetchNews(keyword);
 search.addEventListener('input', res => {
     keyword = res.target.value;
     fetchNews(keyword);
+    loading.style.visibility="visible";
+    element.style.visibility="hidden";
 });
